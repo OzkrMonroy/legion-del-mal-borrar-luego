@@ -1,0 +1,22 @@
+name: People recruiting
+
+on: push
+
+jobs:
+  recruiting-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: The agent introduces themselves
+        run: echo "I am Lex Luthor, and the Bad Legion leader"
+
+      - name: Identity report
+        run: |
+          echo "Identity report"
+          echo "==============="
+          echo ""
+          echo "Key name: ${{ github.actor }}"
+          echo "Contexto de Github"
+          echo "Repo: ${{ github.repository }}"
+          echo "Operation: ${{ github.sha }}"
+          echo "Metadata: ${{ toJson(github) }}"

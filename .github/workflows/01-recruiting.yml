@@ -1,4 +1,6 @@
 name: People recruiting
+env:
+  GITHUB_CONTEXT: ${{ toJson(github) }}
 
 on: push
 
@@ -19,7 +21,7 @@ jobs:
           echo "Contexto de Github"
           echo "Repo: ${{ github.repository }}"
           echo "Operation: ${{ github.sha }}"
-          echo "Metadata: ${{ toJson(github) }}"
+          printf 'Metadata: %s\n' "$GITHUB_CONTEXT"
 
       - name: Agent capabilities
         run: |
